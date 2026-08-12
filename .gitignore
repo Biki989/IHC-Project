@@ -1,0 +1,35 @@
+# Datasets
+data/
+*/data/
+
+# Model outputs and checkpoints
+her2-membrane-segmentation/outputs/
+Fine Tuning/outputs/
+**/outputs/
+*.pth
+*.pt
+*.onnx
+
+# Logs
+wandb/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Specific Documents and Files
+documents/
+gene_instruction.png
+handoff.md
+implementation_plan.md
+METHODOLOGY_PIPELINE_GEN.pdf

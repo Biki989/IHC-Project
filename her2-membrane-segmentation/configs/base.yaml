@@ -1,0 +1,32 @@
+# Data
+data_dir: "d:/Annotated work/data"
+splits_dir: "data/splits"
+patch_size: 256
+num_workers: 2
+
+# Training
+epochs: 100
+batch_size: 4
+learning_rate: 0.001
+weight_decay: 0.01
+optimizer: "adamw"
+scheduler: "cosine"
+early_stopping_patience: 20
+
+# Memory optimization (RTX 3050 4GB)
+mixed_precision: true
+gradient_accumulation_steps: 4   # effective batch = 4 * 4 = 16
+gradient_checkpointing: false    # only for Transformers
+
+# Loss
+loss: "dice_bce"
+dice_weight: 0.5
+bce_weight: 0.5
+
+# Logging
+wandb_project: "her2-membrane-segmentation"
+log_interval: 10
+save_best_only: true
+
+# Seed
+seed: 42

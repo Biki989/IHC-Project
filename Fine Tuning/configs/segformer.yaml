@@ -1,0 +1,15 @@
+_base_: "configs/finetune_base.yaml"
+
+model:
+  name: "segformer"
+  encoder: "nvidia/mit-b0"
+  pretrained: true
+  in_channels: 3
+  out_channels: 1
+
+batch_size: 2
+gradient_accumulation_steps: 8
+gradient_checkpointing: true
+
+output_dir: "outputs/segformer"
+wandb_run_name: "segformer-mit-b0"

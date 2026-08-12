@@ -1,0 +1,11 @@
+_base_: "configs/finetune_base.yaml"
+
+model:
+  name: "attention_unet"
+  encoder: "resnet34"
+  pretrained: true
+  in_channels: 3
+  out_channels: 1
+
+output_dir: "outputs/attention_unet"
+wandb_run_name: "attention_unet-resnet34"

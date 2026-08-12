@@ -1,0 +1,36 @@
+# Data
+data_dir: "d:/Annotated work/data"
+splits_dir: "data/splits"
+patch_size: 256
+num_workers: 2
+
+# Training
+epochs: 50
+batch_size: 4
+learning_rate: 0.00005  # 5e-5 for fine-tuning
+weight_decay: 0.01
+optimizer: "adamw"
+scheduler: "cosine"
+early_stopping_patience: 15
+
+# Memory optimization (RTX 3050 4GB)
+mixed_precision: true
+gradient_accumulation_steps: 4   # effective batch = 4 * 4 = 16
+gradient_checkpointing: false    # only for Transformers
+
+# Loss - adjusted for fine-tuning (more focus on Dice)
+loss: "dice_bce"
+dice_weight: 0.7
+bce_weight: 0.3
+
+# Paths
+pretrained_base_dir: "d:/Annotated work/her2-membrane-segmentation/outputs"
+output_base_dir: "d:/Annotated work/Fine Tuning/outputs"
+
+# Logging
+wandb_project: "her2-membrane-segmentation-finetuning"
+log_interval: 10
+save_best_only: true
+
+# Seed
+seed: 42
